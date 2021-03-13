@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="itemLista">
+            <h2><span>Item Lista</span> {{ itemLista.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Nome</span></dt>
+                <dd>
+                    <span>{{ itemLista.nome }}</span>
+                </dd>
+                <dt><span>Preco</span></dt>
+                <dd>
+                    <span>{{ itemLista.preco }}</span>
+                </dd>
+                <dt><span>Lista</span></dt>
+                <dd>
+                    <div *ngIf="itemLista.lista">
+                        <a [routerLink]="['/lista', itemLista.lista?.id, 'view']">{{ itemLista.lista?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/item-lista', itemLista.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

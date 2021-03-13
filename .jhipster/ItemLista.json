@@ -1,0 +1,35 @@
+{
+  "name": "ItemLista",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "preco",
+      "fieldType": "Double",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "lista",
+      "otherEntityRelationshipName": "itemLista",
+      "relationshipName": "lista",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210313102929",
+  "entityTableName": "item_lista",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["compras"]
+}

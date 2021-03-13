@@ -1,0 +1,47 @@
+application {
+  config {
+    baseName compras
+    packageName br.com.goodidea.listacompras
+    serverPort 8092
+    authenticationType jwt
+    applicationType monolith
+    buildTool maven
+    cacheProvider no
+    clientFramework angularX
+    clientPackageManager npm
+    databaseType sql
+    devDatabaseType h2Memory
+    prodDatabaseType mysql
+    enableHibernateCache false
+    enableSwaggerCodegen false
+    enableTranslation true
+    nativeLanguage pt-br
+    languages [en,pt-br]
+    enableTranslation false
+    reactive false
+    searchEngine false
+    serviceDiscoveryType no
+    skipClient false
+    skipServer false
+    skipUserManagement false
+    testFrameworks [cucumber]
+    websocket false
+  }
+  entities *
+}
+
+entity Lista {
+	nome String required
+}
+entity ItemLista {
+	nome String required
+	preco Double required
+}
+
+relationship OneToMany {
+	Lista to ItemLista
+}
+
+paginate Lista with pagination
+paginate ItemLista with pagination
+

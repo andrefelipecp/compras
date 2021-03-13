@@ -1,0 +1,29 @@
+{
+  "name": "Lista",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "itemLista",
+      "otherEntityRelationshipName": "lista",
+      "relationshipName": "itemLista"
+    }
+  ],
+  "changelogDate": "20210313102829",
+  "entityTableName": "lista",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["compras"]
+}
